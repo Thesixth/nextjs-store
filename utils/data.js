@@ -9,7 +9,7 @@ const data = {
       brand: "pali",
       rating: 4.8,
       numReviews: 8,
-      countInStock: 20,
+      countInStock: 10,
       description: "Access you cards with a touch of a clip",
     },
     {
