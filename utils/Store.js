@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 export const Store = createContext();
 
 const initialState = {
-  cart: { cartItems: [] },
+  cart: { cartItems: [], shippingAddress: {} },
 };
 
 function reducer(state, action) {
@@ -26,6 +26,26 @@ function reducer(state, action) {
       );
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case "Cart_Reset":
+      return {
+        ...state,
+        cart: {
+          cartItems: [],
+          shippingAddress: { location: {} },
+          paymentMethod: "",
+        },
+      };
+    case "Save_Shipping_Address":
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          shippingAddress: {
+            ...state.cart.shippingAddress,
+            ...action.payload,
+          },
+        },
+      };
     default:
       return state;
   }

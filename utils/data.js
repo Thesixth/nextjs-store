@@ -1,4 +1,15 @@
+import bcrypt from "bcryptjs";
+
 const data = {
+  users: [
+    {
+      name: "Emmanuel",
+      email: "paliemmanuel@gmail.com",
+      password: bcrypt.hashSync("12345678"),
+      isAdmin: true,
+    },
+  ],
+
   products: [
     {
       name: "Smart Reractable Wallet",
