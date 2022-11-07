@@ -16,6 +16,7 @@ export default function ShippingScreen() {
   } = useForm();
 
   const { state, dispatch } = useContext(Store);
+  console.log(state.cart.shippingAddress);
 
   useEffect(() => {
     setValue("fullName", state.cart.shippingAddress.fullName);

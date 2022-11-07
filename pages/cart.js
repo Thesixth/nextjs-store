@@ -18,7 +18,7 @@ export default function Cart() {
   };
 
   const updateCartHandler = (item, quantity) => {
-    const qty = Number(quantity);
+    // const qty = Number(quantity);
     dispatch({ type: "AddToCart", payload: { ...item, quantity } });
   };
 
