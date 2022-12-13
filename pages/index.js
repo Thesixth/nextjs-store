@@ -25,8 +25,8 @@ export default function Home() {
           <p className="hero-subtitle pop-animation">
             Find yourself a new love
           </p>
-          <p class="header-button pop-animation">
-            <a href="#shop" class="button">
+          <p className="header-button pop-animation">
+            <a href="#shop" className="button">
               Shop All
             </a>
           </p>

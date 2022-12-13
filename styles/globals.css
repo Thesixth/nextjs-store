@@ -63,7 +63,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   font-size: 1.5rem;
-  height: 100vh;
+  height: 95vh;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
