@@ -2,7 +2,9 @@ import { useContext } from "react";
 import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import data from "../utils/data";
+import downArrow from "../assets/images/downarrow.png";
 import { Store } from "../utils/Store";
+import Image from "next/image";
 
 export default function Home() {
   const { state, dispatch } = useContext(Store);
@@ -17,7 +19,27 @@ export default function Home() {
   };
   return (
     <Layout>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <section className="header-content">
+        <div className="hero">
+          <h1 className="hero-header pop-animation">Welcome to Ligthly</h1>
+          <p className="hero-subtitle pop-animation">
+            Find yourself a new love
+          </p>
+          <p class="header-button pop-animation">
+            <a href="#shop" class="button">
+              Shop All
+            </a>
+          </p>
+        </div>
+        <div className="header-down-arrow">
+          <Image src={downArrow} alt="Hero Image" width={50}></Image>
+        </div>
+      </section>
+
+      <div
+        id="shop"
+        className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4"
+      >
         {data.products.map((product) => (
           <ProductItem
             product={product}

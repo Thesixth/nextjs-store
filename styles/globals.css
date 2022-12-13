@@ -54,3 +54,239 @@ textarea {
 .alert-success {
   @apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
 }
+
+.header-content {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-perspective: 100px;
+
+  perspective: 100px;
+}
+
+.header-content:before {
+  -webkit-animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url(../assets/images/homeOfficeSet.jpg) no-repeat top;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url(../assets/images/homeOfficeSet.jpg) no-repeat top;
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.header-content:after {
+  -webkit-animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  background: #f9fcff;
+  content: "";
+  height: 40rem;
+  left: -5%;
+  position: absolute;
+  right: -5%;
+  top: 90%;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  z-index: 0;
+}
+
+.hero-header {
+  font-size: 2.5rem;
+}
+
+.hero-header,
+.hero-subtitle {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  margin-bottom: 5rem;
+}
+
+.header-button {
+  position: relative;
+  -webkit-transform: translateZ(0.1px);
+  transform: translateZ(0.1px);
+  z-index: 10;
+}
+
+.header-button a {
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition: color 0.4s ease-out;
+  transition: color 0.4s ease-out;
+}
+
+.header-button a::after {
+  border-radius: 1em;
+  border-top: 0.1em solid #fff;
+  bottom: -0.5em;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 100%;
+  -webkit-transition: border-color 0.4s ease-out;
+  transition: border-color 0.4s ease-out;
+}
+
+.header-button a:hover {
+  background-color: #fff;
+  padding: 0.5em;
+  color: #000;
+  right: 0;
+  text-decoration: none;
+}
+
+.header-button a:hover::after {
+  -webkit-animation: anchor-underline 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+  animation: anchor-underline 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+  border-color: #fff;
+}
+
+.pop-animation {
+  animation: pop-in 0.7s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+
+.hero-header {
+  animation-delay: 0.8s;
+}
+.hero-subtitle {
+  animation-delay: 1s;
+}
+.header-button {
+  animation-delay: 1.1s;
+}
+
+.header-down-arrow {
+  animation: heart-beat 2s 3s ease-out infinite;
+  position: absolute;
+  bottom: 4vh;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.header-down-arrow img {
+  animation: fade-slide-up 1s 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animations */
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rotate-up {
+  100% {
+    transform: rotateZ(-4deg);
+  }
+}
+
+@keyframes heart-beat {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes anchor-underline {
+  0%,
+  10% {
+    left: 0;
+    right: 100%;
+  }
+  40%,
+  60% {
+    left: 0;
+    right: 0;
+  }
+  90%,
+  100% {
+    left: 0;
+    right: 0;
+  }
+}
+
+@keyframes anchor-underline {
+  0%,
+  10% {
+    left: 0;
+    right: 100%;
+  }
+  40%,
+  60% {
+    left: 0;
+    right: 0;
+  }
+  90%,
+  100% {
+    left: 0;
+    right: 0;
+  }
+}
